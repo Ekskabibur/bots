@@ -144,7 +144,6 @@ def bot(op):
               random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
               random.choice(KAC).sendText(op.param1, "Mau Ngundang Siapa Ka?\nKk Bukan Admin\nJadi Aku Cancel😛")
         #------Cancel Invite User Finish------#
-            
         if op.type == 13:
             if mid in op.param3:
               if wait["autoJoin"] == True:
@@ -284,6 +283,28 @@ def bot(op):
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
             
+            elif msg.text.lower() == 'Masuk':
+                        G = cl.getGroup(msg.to)
+                        ginfo = cl.getGroup(msg.to)
+                        G.preventJoinByTicket = False
+                        cl.updateGroup(G)
+                        invsend = 0
+                        Ticket = cl.reissueGroupTicket(msg.to)
+                        ki.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.01)
+                        ki2.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.01)
+                        ki3.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.01)
+                        ki4.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.01)
+                        G = cl.getGroup(msg.to)
+                        ginfo = cl.getGroup(msg.to)
+                        G.preventJoinByTicket = True
+                        random.choice(KAC).updateGroup(G)
+                        print "kicker ok"
+                        G.preventJoinByTicket(G)
+                        random.choice(KAC).updateGroup(G)
     #---------------------------------------
             elif "Bot say " in msg.text:
                 if msg.from_ in admin:
