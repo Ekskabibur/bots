@@ -7,23 +7,23 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 
 cl = LINETCR.LINE() #Luffy
-cl.login(token='')
+cl.login(token='EoLPI5Xu94UzGH889qv0.8Yc3rgzqX99L+IbVrXPqea.P2sgKIf3E/GYEzGkYBZkiC16f9HNefhQm3WHW6zMZ+k=')
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="EksOCn8McDmf4Zz9rbra.kJiN4J7/JnKI6Rrya+z9cG.PTfoVDcXG0YdzQrMKTqiNJjXIsxX+6sSshMcAXqGXlU=")
+ki.login(token='EoMOEM4NaW4CyeQmxE1c.3VJlu0KS/DixvbhuJSvGta.qFUSWyk4jNjIOqTgmlOV+Whlkm671ZVeN64+9DilDuk=')
 ki.loginResult()
 
 ki2 = LINETCR.LINE()
-ki2.login(token="EkdvEmubYxKsTKk6Yzq5.99Isk1ybySL0griEpo/JHq.29vaUBd+JE2FkfWl2sR5Y8KeusXAzhlfOGFzS1qrQC4=")
+ki2.login(token='EolYAacihGCq228IkbI0.gq2r1Jzxj71z3rFp84YFya.Wu0nXdqq9M8Wlr57CuiquOUxuv1ru57ZD2yrZsznISM=')
 ki2.loginResult()
 
 ki3 = LINETCR.LINE()
-ki3.login(token="Ek0TJrwq6mUIpzlN6TN5.iVd1e54hz5UYhVnz9q/J5q.sv59VERDCuU3VUDy21lgCaToxng93Kq1N2BEEx/e39A=")
+ki3.login(token='Eohps7PMKJu6yHnTFdp9.beygTSQHv5ToHeFKhyMn2q.XJwWO8GLBtVn1WDz7SGpPs4Z3TNER8JqFmg9U0LTWwM=')
 ki3.loginResult()
 
 ki4 = LINETCR.LINE()
-ki4.login(token="EkWk35mIjOKB2JbpYVLd./ZzsD2MIqpwKvgUcVaAHxq.R0koCndxqXYyvKusa/0fIGXkN7+2INFBm5zCLdvPnCU=")
+ki4.login(token='Eo4aOT4D6QDOjYZWEcwf.swrVmOx1u4N61IdToJootW.4NxclOy2PrtC0ONX5hNDpM9XdiMnSaXKH1gmqz3/teU=')
 ki4.loginResult()
 
 ki=ki2=ki3=ki4=cl
