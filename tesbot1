@@ -7,24 +7,28 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 
 cl = LINETCR.LINE() #Luffy
-cl.login(token='')
+cl.login(token='EpXh1wkibr9Xml9UK2o0.8Yc3rgzqX99L+IbVrXPqea.UXjhPDC5MomOIx/Xn1tDi5I64pnF3Ui3M90DlZwsvjg=')
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="EksOCn8McDmf4Zz9rbra.kJiN4J7/JnKI6Rrya+z9cG.PTfoVDcXG0YdzQrMKTqiNJjXIsxX+6sSshMcAXqGXlU=")
+ki.login(token="EphewkSHMBj7AljWBoe9.beygTSQHv5ToHeFKhyMn2q.vtexz/gdp27fJ8mvCu973h9vyEO/YVhEtYTrc1HyUkY=")
 ki.loginResult()
 
 ki2 = LINETCR.LINE()
-ki2.login(token="EkdvEmubYxKsTKk6Yzq5.99Isk1ybySL0griEpo/JHq.29vaUBd+JE2FkfWl2sR5Y8KeusXAzhlfOGFzS1qrQC4=")
+ki2.login(token="EpZUXTpM3hGQkB3zv8Bd.0tBeEHF8cv5j2CG0bFfhpq.Et9cOMnJfhVZcaZBlwcWEK0hurnJDxUVEmohk2kf8UE=")
 ki2.loginResult()
 
 ki3 = LINETCR.LINE()
-ki3.login(token="Ek0TJrwq6mUIpzlN6TN5.iVd1e54hz5UYhVnz9q/J5q.sv59VERDCuU3VUDy21lgCaToxng93Kq1N2BEEx/e39A=")
+ki3.login(token="EpNN6iCDPF5jJpYQlC6c.3VJlu0KS/DixvbhuJSvGta.p2Qh5RpsVV+QQwKKGayMZ3XtYvzhkZAGYF2E2cXDtNw=")
 ki3.loginResult()
 
 ki4 = LINETCR.LINE()
-ki4.login(token="EkWk35mIjOKB2JbpYVLd./ZzsD2MIqpwKvgUcVaAHxq.R0koCndxqXYyvKusa/0fIGXkN7+2INFBm5zCLdvPnCU=")
+ki4.login(token="Epn2eSEWF1sliry96830.gq2r1Jzxj71z3rFp84YFya.mnZ+jMdQZ+le2yIngw1IaxgyZWzCHkCCVI60hQKZ9dM=")
 ki4.loginResult()
+
+ki5 = LINETCR.LINE()
+ki5.login(token="EprsjZVJrzzok165Sn9f.swrVmOx1u4N61IdToJootW.mhN8iZnqvxLpxaQbmk56DFnht2e3Vgjy8lQXNSc2QmA=")
+ki5.loginResult()
 
 print "login Bot"
 reload(sys)
@@ -290,7 +294,13 @@ def bot(op):
             elif "Bot say " in msg.text:
                 if msg.from_ in admin:
                   bctxt = msg.text.replace("Bot say ", "")
-                  cl.sendText(msg.to, (bctxt))
+                  cl.sendText(manusia, (bctxt))
+		  ki.sendText(manusia, (bctxt))
+		  ki2.sendText(manusia, (bctxt))
+		  ki3.sendText(manusia, (bctxt))
+		  ki4.sendText(manusia, (bctxt))
+		  ki5.sendText(manusia, (bctxt))
+
     #-------------- Add Friends ------------
             elif "Bot Add @" in msg.text:
               if msg.toType == 2:
@@ -342,6 +352,11 @@ def bot(op):
                 a = cl.getAllContactIds()
                 for manusia in a:
                     cl.sendText(manusia, (bctxt))
+		    ki.sendText(manusia, (bctxt))
+		    ki2.sendText(manusia, (bctxt))
+		    ki3.sendText(manusia, (bctxt))
+		    ki4.sendText(manusia, (bctxt))
+		    ki5.sendText(manusia, (bctxt))
 
             elif msg.text in ["Bot?"]: #Ngirim Semua Kontak Bot
               if msg.from_ in admin:
