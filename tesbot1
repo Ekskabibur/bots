@@ -26,8 +26,6 @@ ki4 = LINETCR.LINE()
 ki4.login(token='Eo4aOT4D6QDOjYZWEcwf.swrVmOx1u4N61IdToJootW.4NxclOy2PrtC0ONX5hNDpM9XdiMnSaXKH1gmqz3/teU=')
 ki4.loginResult()
 
-ki=ki2=ki3=ki4=cl
-
 print "login Bot"
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -39,7 +37,7 @@ helpMessage ="""-==================-
 [•]@bye/Bot out [Untuk Keluarkan Bot]
 -==================-
 """
-KAC=[cl]
+KAC=[cl,ki, ki1, ki2, ki3, ki4]
 mid = cl.getProfile().mid 
 
 Bots=[mid]
@@ -107,6 +105,10 @@ def bot(op):
                     cl.sendText(op.param1,str(wait["message"]))
         if op.type == 13:
             cl.acceptGroupInvitation(op.param1)
+            ki.acceptGroupInvitation(op.param1)
+            ki2.acceptGroupInvitation(op.param1)
+            ki3.acceptGroupInvitation(op.param1)
+            ki4.acceptGroupInvitation(op.param1)
             cl.sendText(op.param1, "Ketik Help Untuk Liat Menu")
         #------Protect Group Kick start------#
         if op.type == 11:
@@ -144,6 +146,7 @@ def bot(op):
               random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
               random.choice(KAC).sendText(op.param1, "Mau Ngundang Siapa Ka?\nKk Bukan Admin\nJadi Aku Cancel😛")
         #------Cancel Invite User Finish------#
+            
         if op.type == 13:
             if mid in op.param3:
               if wait["autoJoin"] == True:
@@ -288,10 +291,6 @@ def bot(op):
                 if msg.from_ in admin:
                   bctxt = msg.text.replace("Bot say ", "")
                   cl.sendText(msg.to, (bctxt))
-		  ki.sendText(msg.to, (bctxt))
-		  ki2.sendText(msg.to, (bctxt))
-		  ki3.sendText(msg.to, (bctxt))
-		  ki4.sendText(msg.to, (bctxt))
     #-------------- Add Friends ------------
             elif "Bot Add @" in msg.text:
               if msg.toType == 2:
@@ -343,21 +342,6 @@ def bot(op):
                 a = cl.getAllContactIds()
                 for manusia in a:
                     cl.sendText(manusia, (bctxt))
-		    ki.sendText(manusia, (bctxt))
-		    ki2.sendText(manusia, (bctxt))
-		    ki3.sendText(manusia, (bctxt))
-		    ki4.sendText(manusia, (bctxt))
-            
-	    elif "Bcc1 " in msg.text:
-              if msg.from_ in admin:
-                bctxt = msg.text.replace("Bcc ", "")
-                a = cl.getAllContactIds()
-                for manusia in a:
-                    cl.sendText(manusia, (bctxt))
-		    ki.sendText(manusia, (bctxt))
-		    ki2.sendText(manusia, (bctxt))
-		    ki3.sendText(manusia, (bctxt))
-		    ki4.sendText(manusia, (bctxt))
 
             elif msg.text in ["Bot?"]: #Ngirim Semua Kontak Bot
               if msg.from_ in admin:
@@ -583,17 +567,17 @@ def bot(op):
 	  
 	  
        #------------ Keluarin Bot----------------------#
-            elif msg.text in ["Bot out","@bye"]: # Keluar Dari Semua Group Yang Di dalem nya  ada bot(Kalo Bot Kalian Nyangkut di Group lain :D)
-              #if msg.from_ in owner:
-                gid = cl.getGroup()
-                    try:
-                        cl.sendText(msg.to," Good bye guys")
-                        ki.leaveGroup(msg.to)
-                        ki2.leaveGroup(msg.to)
-                        ki3.leaveGroup(msg.to)
-                        ki4.leaveGroup(msg.to)
-                    except:
-                        pass
+             elif msg.text.lower() == 'Pulang':
+                if msg.toType == 2:
+                      ginfo = cl.getGroup(msg.to)
+                      try:
+                          cl.sendText(msg.to, "Good bye guys")
+                          ki.leaveGroup(msg.to)
+                          ki2.leaveGroup(msg.to)
+                          ki3.leaveGroup(msg.to)
+                          ki4.leaveGroup(msg.to)
+                      except:
+                          pass
     #---------------------------------------------#
 
       #-------------Creator------------------#
@@ -618,6 +602,7 @@ def bot(op):
           except:
              pass
 #---------------------
+
         if op.type == 59:
             print op
 
