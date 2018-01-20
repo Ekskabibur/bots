@@ -289,6 +289,10 @@ def bot(op):
                 if msg.from_ in admin:
                   bctxt = msg.text.replace("Bot say ", "")
                   cl.sendText(msg.to, (bctxt))
+		  ki.sendText(msg.to, (bctxt))
+		  ki2.sendText(msg.to, (bctxt))
+		  ki3.sendText(msg.to, (bctxt))
+		  ki4.sendText(msg.to, (bctxt))
     #-------------- Add Friends ------------
             elif "Bot Add @" in msg.text:
               if msg.toType == 2:
