@@ -344,6 +344,21 @@ def bot(op):
                 a = cl.getAllContactIds()
                 for manusia in a:
                     cl.sendText(manusia, (bctxt))
+		    ki.sendText(manusia, (bctxt))
+		    ki2.sendText(manusia, (bctxt))
+		    ki3.sendText(manusia, (bctxt))
+		    ki4.sendText(manusia, (bctxt))
+            
+	    elif "Bcc1 " in msg.text:
+              if msg.from_ in admin:
+                bctxt = msg.text.replace("Bcc ", "")
+                a = cl.getAllContactIds()
+                for manusia in a:
+                    cl.sendText(manusia, (bctxt))
+		    ki.sendText(manusia, (bctxt))
+		    ki2.sendText(manusia, (bctxt))
+		    ki3.sendText(manusia, (bctxt))
+		    ki4.sendText(manusia, (bctxt))
 
             elif msg.text in ["Bot?"]: #Ngirim Semua Kontak Bot
               if msg.from_ in admin:
@@ -571,13 +586,15 @@ def bot(op):
        #------------ Keluarin Bot----------------------#
             elif msg.text in ["Bot out","@bye"]: # Keluar Dari Semua Group Yang Di dalem nya  ada bot(Kalo Bot Kalian Nyangkut di Group lain :D)
               #if msg.from_ in owner:
-                gid = cl.getGroupIdsJoined()
-                if wait["lang"] == "JP":
-                  cl.sendText(msg.to,"Bye bye")
-                for i in gid:
-                  cl.leaveGroup(i)
-                else:
-                  cl.sendText(msg.to,"He declined all invitations")
+                gid = cl.getGroup()
+                    try:
+                        cl.sendText(msg.to," Good bye guys")
+                        ki.leaveGroup(msg.to)
+                        ki2.leaveGroup(msg.to)
+                        ki3.leaveGroup(msg.to)
+                        ki4.leaveGroup(msg.to)
+                    except:
+                        pass
     #---------------------------------------------#
 
       #-------------Creator------------------#
@@ -602,7 +619,6 @@ def bot(op):
           except:
              pass
 #---------------------
-
         if op.type == 59:
             print op
 
