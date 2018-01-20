@@ -107,6 +107,10 @@ def bot(op):
                     cl.sendText(op.param1,str(wait["message"]))
         if op.type == 13:
             cl.acceptGroupInvitation(op.param1)
+	    ki.acceptGroupInvitation(op.param1)
+	    ki2.acceptGroupInvitation(op.param1)
+	    ki3.acceptGroupInvitation(op.param1)
+	    ki4.acceptGroupInvitation(op.param1)
             cl.sendText(op.param1, "Ketik Help Untuk Liat Menu")
         #------Protect Group Kick start------#
         if op.type == 11:
