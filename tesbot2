@@ -6,28 +6,28 @@ from LINETCR.lib.curve.ttypes import *
 from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 
-cl = LINETCR.LINE() #Luffy
-cl.login(token='')
+cl = LINETCR.LINE()
+cl.login(token='EpXh1wkibr9Xml9UK2o0.8Yc3rgzqX99L+IbVrXPqea.UXjhPDC5MomOIx/Xn1tDi5I64pnF3Ui3M90DlZwsvjg=')
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="")
+ki.login(token="EpctQ6l4KX4Fhf2oLOod.0tBeEHF8cv5j2CG0bFfhpq.N+NAAOOLl4H+slgPklTi2JTfnx4eJnFLdoAKZPZBT6U=")
 ki.loginResult()
 
 ki2 = LINETCR.LINE()
-ki2.login(token="")
+ki2.login(token="Ep6NNTGlhJML94NSV2H0.gq2r1Jzxj71z3rFp84YFya.banHXK+dOG3VaR7+wvbTZvwVFwn7hhL5ozSlJ4nGaf4=")
 ki2.loginResult()
 
 ki3 = LINETCR.LINE()
-ki3.login(token="")
+ki3.login(token="EpRCvzQfbvp024Oi2GHf.swrVmOx1u4N61IdToJootW.fR0tvm/Hzqz1cMacWh3yCZOyc2H1CPZGyFk5lErLcHU=")
 ki3.loginResult()
 
 ki4 = LINETCR.LINE()
-ki4.login(token="")
+ki4.login(token="EpohfIwYdNohRlPwMnf9.beygTSQHv5ToHeFKhyMn2q.LgTScKMOxgCpbhiO21kCfRaVuWQGMHZE72UlCfFFnTo=")
 ki4.loginResult()
 
 ki5 = LINETCR.LINE()
-ki5.login(token="")
+ki5.login(token="EpL6yxq4Af1RmK3nH3Fc.3VJlu0KS/DixvbhuJSvGta.qhuupo+a3VIxKlbpa2IiiTeuA/vxCrwZUvXRZwUfb3c=")
 ki5.loginResult()
 
 print "login Bot"
