@@ -29,6 +29,7 @@ ki5 = TOBY.LINE()
 ki5.login(token="")
 ki5.loginResult()
 
+print"Success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -291,7 +292,7 @@ def bot(op):
                 ki5.sendText(msg.to, ki5mid)
 
             elif "Cstatus:" in msg.text:
-                if msg.from_ in admin:
+                if msg.from_ in admsa:
                     string = msg.text.replace("Cstatus:", "")
                     if len(string.decode('utf-8')) <= 500:
                         profile = cl.getProfile()
@@ -389,14 +390,14 @@ def bot(op):
 
             elif "Bcc2" in msg.text:
                 if msg.from_ in admsa:
-                    bctxt = msg.text.replace("Bcc ", "")
+                    bctxt = msg.text.replace("Bcc2 ", "")
                     a = cl.getAllContactIds()
                     for manusia in a:
                         cl.sendText(manusia, (bctxt))
 
             elif "Bcc1" in msg.text:
                 if msg.from_ in admsa:
-                    bctxt = msg.text.replace("Bcc ", "")
+                    bctxt = msg.text.replace("Bcc1 ", "")
                     a = cl.getAllContactIds()
                     for manusia in a:
                         ki.sendText(manusia, (bctxt))
@@ -404,6 +405,24 @@ def bot(op):
                         ki3.sendText(manusia, (bctxt))
                         ki4.sendText(manusia, (bctxt))
                         ki5.sendText(manusia, (bctxt))
+
+            elif "/spam: " in msg.text:
+                    if msg.from_ in admsa:
+                        target=msg.text.replace("/spam: ","")
+                        target2= target.split()
+                        midd = target2[0]
+                        jumlah=int(target2[1])
+                        spamnya=target.replace(midd+""+target2[1]+" ","")
+                        if jumlah <=100:
+                            for var in range(0,jumlah):
+                                if(Bwait["Bmessage"]in ["","","/n",None]):
+                                    pass
+                                else:
+                                    cl.findAndAddContactsByMid(midd)
+                                    cl.sendText(midd,str(Bwait["Bmessage"]))
+                                    print "{notif] Spam chat Mid sukses"
+                    else:
+                        cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
 
             elif msg.text.lower() == 'group id':
                 gid = cl.getGroupIdsJoined()
