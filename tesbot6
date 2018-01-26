@@ -721,16 +721,6 @@ def bot(op):
                     ki4.sendText(msg.to, (bctxt))
                     ki5.sendText(msg.to, (bctxt))
 
-            elif "Copy " in msg.text:
-                if msg.from_ in admsa:
-                    bctxt = msg.text.replace("Copy ", "")
-                    cl.sendText(msg.to, (bctxt))
-                    ki.sendText(msg.to, "1"+(bctxt))
-                    ki2.sendText(msg.to, "2"+(bctxt))
-                    ki3.sendText(msg.to, "3"+(bctxt))
-                    ki4.sendText(msg.to, "4"+(bctxt))
-                    ki5.sendText(msg.to, "5"+(bctxt))
-
             elif msg.text.lower() == 'ping':
                 cl.sendText(msg.to, "Ping 􀠁􀆩􏿿")
                 ki.sendText(msg.to, "Ping 􀠁􀆩􏿿")
