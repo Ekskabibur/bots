@@ -129,7 +129,7 @@ def bot(op):
             msg = op.message
             if msg.toType == 0:
                 msg.to = msg.from_
-                if msg.from_ in admsa:
+                if msg.from_ == "MID":
                     if "join:" in msg.text:
                         list_ = msg.text.split(":")
                         try:
@@ -143,134 +143,40 @@ def bot(op):
                 if wait["leaveRoom"] == True:
                     cl.leaveRoom(msg.to)
         if op.type == 26:
-            if op.type == 25:
-                msg = op.message
-                if msg.contentType == 13:
-                    if wait["wblack"] == True:
-                        if msg.contentMetadata["mid"] in wait["commentBlack"]:
-                            cl.sendText(msg.to, "sudah masuk daftar hitam")
-                            wait["wblack"] = False
-                        else:
-                            wait["commentBlack"][msg.contentMetadata["mid"]] = True
-                            wait["wblack"] = False
-                            cl.sendText(msg.to, "Itu tidak berkomentar")
-                    elif wait["dblack"] == True:
-                        if msg.contentMetadata["mid"] in wait["commentBlack"]:
-                            del wait["commentBlack"][msg.contentMetadata["mid"]]
-                            cl.sendText(msg.to, "Done")
-                            wait["dblack"] = False
-                        else:
-                            wait["dblack"] = False
-                            cl.sendText(msg.to, "Tidak ada dalam daftar hitam")
-                    elif wait["wblacklist"] == True:
-                        if msg.contentMetadata["mid"] in wait["blacklist"]:
-                            cl.sendText(msg.to, "sudah masuk daftar hitam")
-                            wait["wblacklist"] = False
-                        else:
-                            wait["blacklist"][msg.contentMetadata["mid"]] = True
-                            wait["wblacklist"] = False
-                            cl.sendText(msg.to, "Done")
-                    elif wait["dblacklist"] == True:
-                        if msg.contentMetadata["mid"] in wait["blacklist"]:
-                            del wait["blacklist"][msg.contentMetadata["mid"]]
-                            cl.sendText(msg.to, "Done")
-                            wait["dblacklist"] = False
-                        else:
-                            wait["dblacklist"] = False
-                            cl.sendText(msg.to, "Done")
-                    elif wait["contact"] == True:
-                        msg.contentType = 0
-                        cl.sendText(msg.to, msg.contentMetadata["mid"])
-                        if 'displayName' in msg.contentMetadata:
-                            contact = cl.getContact(msg.contentMetadata["mid"])
-                            try:
-                                cu = cl.channel.getCover(msg.contentMetadata["mid"])
-                            except:
-                                cu = ""
-                            cl.sendText(msg.to, "[displayName]:\n" + msg.contentMetadata["displayName"] + "\n[mid]:\n" +
-                                        msg.contentMetadata[
-                                            "mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(
-                                cu))
-                        else:
-                            contact = cl.getContact(msg.contentMetadata["mid"])
-                            try:
-                                cu = cl.channel.getCover(msg.contentMetadata["mid"])
-                            except:
-                                cu = ""
-                            cl.sendText(msg.to,
-                                        "[displayName]:\n" + contact.displayName + "\n[mid]:\n" + msg.contentMetadata[
-                                            "mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(
-                                            cu))
-        if msg.contentType == 13:
-            if wait["wblack"] == True:
-                if msg.contentMetadata["mid"] in wait["commentBlack"]:
-                    cl.sendText(msg.to, "sudah masuk daftar hitam")
-                    wait["wblack"] = False
-                else:
-                    wait["commentBlack"][msg.contentMetadata["mid"]] = True
-                    wait["wblack"] = False
-                    cl.sendText(msg.to, "Itu tidak berkomentar")
-            elif wait["dblack"] == True:
-                if msg.contentMetadata["mid"] in wait["commentBlack"]:
-                    del wait["commentBlack"][msg.contentMetadata["mid"]]
-                    cl.sendText(msg.to, "Done")
-                    wait["dblack"] = False
-                else:
-                    wait["dblack"] = False
-                    cl.sendText(msg.to, "Tidak ada dalam daftar hitam")
-            elif wait["wblacklist"] == True:
-                if msg.contentMetadata["mid"] in wait["blacklist"]:
-                    cl.sendText(msg.to, "sudah masuk daftar hitam")
-                    wait["wblacklist"] = False
-                else:
-                    wait["blacklist"][msg.contentMetadata["mid"]] = True
-                    wait["wblacklist"] = False
-                    cl.sendText(msg.to, "Done")
-            elif wait["dblacklist"] == True:
-                if msg.contentMetadata["mid"] in wait["blacklist"]:
-                    del wait["blacklist"][msg.contentMetadata["mid"]]
-                    cl.sendText(msg.to, "Done")
-                    wait["dblacklist"] = False
-                else:
-                    wait["dblacklist"] = False
-                    cl.sendText(msg.to, "Done")
-                if op.type == 17:
-                    if op.param2 not in Bots:
-                        if op.param2 in Bots:
-                            pass
-                    if wait["protect"] == True:
-                        if wait["blacklist"][op.param2] == True:
-                            try:
-                                random.choice(KAC).kickoutFromGroup(op.param1, [op.param2])
-                                G = random.choice(KAC).getGroup(op.param1)
-                                G.preventJoinByTicket = True
-                                random.choice(KAC).updateGroup(G)
-                                #			random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                            except:
-                                #			pass
-                                try:
-                                    random.choice(KAC).kickoutFromGroup(op.param1, [op.param2])
-                                    G = random.choice(KAC).getGroup(op.param1)
-                                    G.preventJoinByTicket = True
-                                    random.choice(KAC).updateGroup(G)
-                                    #			    random.choice(KAK).kickoutFromGroup(op.param1,[op.param2])
-                                except:
-                                    pass
-                        elif op.param2 not in Bots:
-                            random.choice(KAC).sendText(op.param1, "Welcome. Don't Play Bots. I can kick you!")
+            msg = op.message
+            if msg.contentType == 13:
+                if wait["wblack"] == True:
+                    if msg.contentMetadata["mid"] in wait["commentBlack"]:
+                        cl.sendText(msg.to, "sudah masuk daftar hitam")
+                        wait["wblack"] = False
                     else:
-                        pass
-                if op.type == 19:
-                    if op.param2 not in Bots:
-                        if op.param2 in Bots:
-                            pass
-                        elif wait["protect"] == True:
-                            wait["blacklist"][op.param2] = True
-                            random.choice(KAC).kickoutFromGroup(op.param1, [op.param2])
-                        else:
-                            cl.sendText(op.param1, "")
+                        wait["commentBlack"][msg.contentMetadata["mid"]] = True
+                        wait["wblack"] = False
+                        cl.sendText(msg.to, "Itu tidak berkomentar")
+                elif wait["dblack"] == True:
+                    if msg.contentMetadata["mid"] in wait["commentBlack"]:
+                        del wait["commentBlack"][msg.contentMetadata["mid"]]
+                        cl.sendText(msg.to, "Done")
+                        wait["dblack"] = False
                     else:
-                        cl.sendText(op.param1, "")
+                        wait["dblack"] = False
+                        cl.sendText(msg.to, "Tidak ada dalam daftar hitam")
+                elif wait["wblacklist"] == True:
+                    if msg.contentMetadata["mid"] in wait["blacklist"]:
+                        cl.sendText(msg.to, "sudah masuk daftar hitam")
+                        wait["wblacklist"] = False
+                    else:
+                        wait["blacklist"][msg.contentMetadata["mid"]] = True
+                        wait["wblacklist"] = False
+                        cl.sendText(msg.to, "Done")
+                elif wait["dblacklist"] == True:
+                    if msg.contentMetadata["mid"] in wait["blacklist"]:
+                        del wait["blacklist"][msg.contentMetadata["mid"]]
+                        cl.sendText(msg.to, "Done")
+                        wait["dblacklist"] = False
+                    else:
+                        wait["dblacklist"] = False
+                        cl.sendText(msg.to, "Done")
             elif msg.contentType == 16:
                 if wait["timeline"] == True:
                     msg.contentType = 0
@@ -482,6 +388,25 @@ def bot(op):
                 msg.contentMetadata = {'mid': admsa}
                 cl.sendMessage(msg)
 
+            elif "Bcc2" in msg.text:
+                if msg.from_ in admsa:
+                    bctxt = msg.text.replace("Bcc2 ", "")
+                    a = cl.getAllContactIds()
+                    for manusia in a:
+                        cl.sendText(manusia, (bctxt))
+
+            elif "Bcc1" in msg.text:
+                if msg.from_ in admsa:
+                    bctxt = msg.text.replace("Bcc1 ", "")
+                    a = cl.getAllContactIds()
+                    for manusia in a:
+                        ki.sendText(manusia, (bctxt))
+                        ki2.sendText(manusia, (bctxt))
+                        ki3.sendText(manusia, (bctxt))
+                        ki4.sendText(manusia, (bctxt))
+                        ki5.sendText(manusia, (bctxt))
+
+
             elif "spam " in msg.text:
                 if msg.from_ in admsa:
                     target = msg.text.replace("spam ", "")
@@ -600,8 +525,8 @@ def bot(op):
                             if (pesan in ["", "","", "/n", None]):
                                 pass
                             else:
-                                ki4.findAndAddContactsByMid(midd)
-                                ki4.sendText(midd, pesan)
+                                ki.findAndAddContactsByMid(midd)
+                                ki.sendText(midd, pesan)
                                 ki.sendText(msg.to, "Sukses")
                                 print "{notif] Spam chat Mid sukses"
                 else:
