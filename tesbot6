@@ -413,7 +413,7 @@ def bot(op):
                     target2 = target.split()
                     midd = target2[0]
                     if target2[0]=="s1":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
+                        midd="ueff8f78401c867593c6ddc8aeb8c649d"
                     if target2[0]=="s2":
                         midd="u9fec89015e171bc9a8f82ce1ded83075"
                     if target2[0] == "s3":
@@ -429,145 +429,16 @@ def bot(op):
                             else:
                                 cl.findAndAddContactsByMid(midd)
                                 cl.sendText(midd, pesan)
+                                ki.sendText(midd, pesan)
+                                ki2.sendText(midd, pesan)
+                                ki3.sendText(midd, pesan)
+                                ki4.sendText(midd, pesan)
+                                ki5.sendText(midd, pesan)
                                 cl.sendText(msg.to, "Sukses")
                                 print "{notif] Spam chat Mid sukses"
                 else:
                     cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
 
-            elif "1spam " in msg.text:
-                if msg.from_ in admsa:
-                    target = msg.text.replace("1spam ", "")
-                    target2 = target.split()
-                    midd = target2[0]
-                    if target2[0]=="s1":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0]=="s2":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0] == "s3":
-                        midd="ubb4183ea6b5c541817eaa3e6a8c6acfe"
-                    else:
-                        midd=target2[0]
-                    jumlah = int(target2[1])
-                    pesan=str(target2[2])
-                    if jumlah <= 100:
-                        for var in range(0, jumlah):
-                            if (pesan in ["", "","", "/n", None]):
-                                pass
-                            else:
-                                ki.findAndAddContactsByMid(midd)
-                                ki.sendText(midd, pesan)
-                                ki.sendText(msg.to, "Sukses")
-                                print "{notif] Spam chat Mid sukses"
-                else:
-                    cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
-
-            elif "2spam " in msg.text:
-                if msg.from_ in admsa:
-                    target = msg.text.replace("2spam ", "")
-                    target2 = target.split()
-                    midd = target2[0]
-                    if target2[0]=="s1":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0]=="s2":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0] == "s3":
-                        midd="ubb4183ea6b5c541817eaa3e6a8c6acfe"
-                    else:
-                        midd=target2[0]
-                    jumlah = int(target2[1])
-                    pesan=str(target2[2])
-                    if jumlah <= 100:
-                        for var in range(0, jumlah):
-                            if (pesan in ["", "","", "/n", None]):
-                                pass
-                            else:
-                                ki2.findAndAddContactsByMid(midd)
-                                ki2.sendText(midd, pesan)
-                                ki2.sendText(msg.to, "Sukses")
-                                print "{notif] Spam chat Mid sukses"
-                else:
-                    cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
-
-            elif "3spam " in msg.text:
-                if msg.from_ in admsa:
-                    target = msg.text.replace("3spam ", "")
-                    target2 = target.split()
-                    midd = target2[0]
-                    if target2[0]=="s1":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0]=="s2":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0] == "s3":
-                        midd="ubb4183ea6b5c541817eaa3e6a8c6acfe"
-                    else:
-                        midd=target2[0]
-                    jumlah = int(target2[1])
-                    pesan=str(target2[2])
-                    if jumlah <= 100:
-                        for var in range(0, jumlah):
-                            if (pesan in ["", "","", "/n", None]):
-                                pass
-                            else:
-                                ki3.findAndAddContactsByMid(midd)
-                                ki3.sendText(midd, pesan)
-                                ki3.sendText(msg.to, "Sukses")
-                                print "{notif] Spam chat Mid sukses"
-                else:
-                    cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
-                    
-            elif "4spam " in msg.text:
-                if msg.from_ in admsa:
-                    target = msg.text.replace("4spam ", "")
-                    target2 = target.split()
-                    midd = target2[0]
-                    if target2[0]=="s1":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0]=="s2":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0] == "s3":
-                        midd="ubb4183ea6b5c541817eaa3e6a8c6acfe"
-                    else:
-                        midd=target2[0]
-                    jumlah = int(target2[1])
-                    pesan=str(target2[2])
-                    if jumlah <= 100:
-                        for var in range(0, jumlah):
-                            if (pesan in ["", "","", "/n", None]):
-                                pass
-                            else:
-                                ki4.findAndAddContactsByMid(midd)
-                                ki4.sendText(midd, pesan)
-                                ki4.sendText(msg.to, "Sukses")
-                                print "{notif] Spam chat Mid sukses"
-                else:
-                    cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
-
-            elif "5spam " in msg.text:
-                if msg.from_ in admsa:
-                    target = msg.text.replace("5spam ", "")
-                    target2 = target.split()
-                    midd = target2[0]
-                    if target2[0]=="s1":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0]=="s2":
-                        midd="u9fec89015e171bc9a8f82ce1ded83075"
-                    if target2[0] == "s3":
-                        midd="ubb4183ea6b5c541817eaa3e6a8c6acfe"
-                    else:
-                        midd=target2[0]
-                    jumlah = int(target2[1])
-                    pesan=str(target2[2])
-                    if jumlah <= 100:
-                        for var in range(0, jumlah):
-                            if (pesan in ["", "","", "/n", None]):
-                                pass
-                            else:
-                                ki5.findAndAddContactsByMid(midd)
-                                ki5.sendText(midd, pesan)
-                                ki5.sendText(msg.to, "Sukses")
-                                print "{notif] Spam chat Mid sukses"
-                else:
-                    cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
 
             elif msg.text.lower() == 'group id':
                 gid = cl.getGroupIdsJoined()
