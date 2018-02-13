@@ -37,6 +37,14 @@ ki7 = TOBY.LINE()
 ki7.login(token="")
 ki7.loginResult()
 
+ki8 = TOBY.LINE()
+ki7.login(token="")
+ki7.loginResult()
+
+ki9 = TOBY.LINE()
+ki7.login(token="")
+ki7.loginResult()
+
 print("Success")
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -99,7 +107,7 @@ COMMAND IN GROUP
 
 ==========
 """
-KAC=[cl,ki,ki2,ki3,ki4,ki5,ki6,ki7]
+KAC=[cl,ki,ki2,ki3,ki4,ki5,ki6,ki7,ki8,ki9]
 mid = cl.getProfile().mid
 kimid = ki.getProfile().mid
 ki2mid = ki2.getProfile().mid
@@ -108,7 +116,9 @@ ki4mid = ki4.getProfile().mid
 ki5mid = ki5.getProfile().mid
 ki6mid = ki6.getProfile().mid
 ki7mid = ki7.getProfile().mid
-Bots=[mid,kimid,ki2mid,ki3mid,ki4mid,ki5mid,ki6mid,ki7mid]
+ki8mid = ki8.getProfile().mid
+ki9mid = ki9.getProfile().mid
+Bots=[mid,kimid,ki2mid,ki3mid,ki4mid,ki5mid,ki6mid,ki7mid,ki8mid,ki9mid]
 admsa = "ub1e94db89396dd6cbd72190f371c1ecd"
 
 wait = {
@@ -584,8 +594,24 @@ def bot(op):
                     ki7.updateProfile(profile)
                     ki7.sendText(msg.to,"Update Names Menjadi :" + string + "")
 #--------------------------------------------------------
-            elif "Cstatus:" in msg.text:
-              if msg.from_ in admin:
+            elif "8name:" in msg.text:
+                string = msg.text.replace("8name:","")
+                if len(string.decode('utf-8')) <= 30:
+                    profile = ki8.getProfile()
+                    profile.displayName = string
+                    ki8.updateProfile(profile)
+                    ki8.sendText(msg.to,"Update Names Menjadi :" + string + "")
+#--------------------------------------------------------
+	    elif "9name:" in msg.text:
+                string = msg.text.replace("9name:","")
+                if len(string.decode('utf-8')) <= 30:
+                    profile = ki9.getProfile()
+                    profile.displayName = string
+                    ki9.updateProfile(profile)
+                    ki9.sendText(msg.to,"Update Names Menjadi :" + string + "")
+#--------------------------------------------------------
+	    elif "Cstatus:" in msg.text:
+              if msg.from_ in admsa:
                 string = msg.text.replace("Cstatus:","")
                 if len(string.decode('utf-8')) <= 500:
                     profile = cl.getProfile()
@@ -595,8 +621,8 @@ def bot(op):
                     cl.sendText(msg.to,"Done")
 #---------------------------------------------------------
             elif "Cstatus1:" in msg.text:
-              if msg.from_ in admin:
-                string = msg.text.replace("Cstatus:","")
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus1:","")
                 if len(string.decode('utf-8')) <= 500:
                     profile = ki.getProfile()
                     profile.statusMessage = string
@@ -605,8 +631,8 @@ def bot(op):
                     ki.sendText(msg.to,"Done")
 #---------------------------------------------------------
             elif "Cstatus2:" in msg.text:
-              if msg.from_ in admin:
-                string = msg.text.replace("Cstatus:","")
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus2:","")
                 if len(string.decode('utf-8')) <= 500:
                     profile = cl.getProfile()
                     profile.statusMessage = string
@@ -615,8 +641,8 @@ def bot(op):
                     ki2.sendText(msg.to,"Done")
 #---------------------------------------------------------
             elif "Cstatus3:" in msg.text:
-              if msg.from_ in admin:
-                string = msg.text.replace("Cstatus:","")
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus3:","")
                 if len(string.decode('utf-8')) <= 500:
                     profile = ki.getProfile()
                     profile.statusMessage = string
@@ -625,8 +651,8 @@ def bot(op):
                     ki3.sendText(msg.to,"Done")
 #---------------------------------------------------------
             elif "Cstatus4:" in msg.text:
-              if msg.from_ in admin:
-                string = msg.text.replace("Cstatus:","")
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus4:","")
                 if len(string.decode('utf-8')) <= 500:
                     profile = cl.getProfile()
                     profile.statusMessage = string
@@ -635,8 +661,8 @@ def bot(op):
                     ki4.sendText(msg.to,"Done")
 #---------------------------------------------------------
             elif "Cstatus5:" in msg.text:
-              if msg.from_ in admin:
-                string = msg.text.replace("Cstatus:","")
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus5:","")
                 if len(string.decode('utf-8')) <= 500:
                     profile = ki.getProfile()
                     profile.statusMessage = string
@@ -645,8 +671,8 @@ def bot(op):
                     ki5.sendText(msg.to,"Done")
 #---------------------------------------------------------
             elif "Cstatus6:" in msg.text:
-              if msg.from_ in admin:
-                string = msg.text.replace("Cstatus:","")
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus6:","")
                 if len(string.decode('utf-8')) <= 500:
                     profile = cl.getProfile()
                     profile.statusMessage = string
@@ -655,14 +681,34 @@ def bot(op):
                     ki6.sendText(msg.to,"Done")
 #---------------------------------------------------------
             elif "Cstatus7:" in msg.text:
-              if msg.from_ in admin:
-                string = msg.text.replace("Cstatus:","")
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus7:","")
                 if len(string.decode('utf-8')) <= 500:
-                    profile = ki.getProfile()
+                    profile = ki7.getProfile()
                     profile.statusMessage = string
                     ki7.updateProfile(profile)
                 else:
                     ki7.sendText(msg.to,"Done")
+#---------------------------------------------------------
+            elif "Cstatus8:" in msg.text:
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus8:","")
+                if len(string.decode('utf-8')) <= 500:
+                    profile = ki8.getProfile()
+                    profile.statusMessage = string
+                    ki8.updateProfile(profile)
+                else:
+                    ki8.sendText(msg.to,"Done")
+#---------------------------------------------------------
+            elif "Cstatus9:" in msg.text:
+              if msg.from_ in admsa:
+                string = msg.text.replace("Cstatus9:","")
+                if len(string.decode('utf-8')) <= 500:
+                    profile = ki9.getProfile()
+                    profile.statusMessage = string
+                    ki9.updateProfile(profile)
+                else:
+                    ki9.sendText(msg.to,"Done")
 #---------------------------------------------------------
             elif "Mid:" in msg.text:
                 mmid = msg.text.replace("Mid:","")
@@ -1829,6 +1875,7 @@ def bot(op):
             elif "Bot say " in msg.text:
 	    	if msg.from_ in admsa:
 				bctxt = msg.text.replace("Bot say ","")
+				cl.sendText(msg.to,(bctxt))
 				ki.sendText(msg.to,(bctxt))
 				ki2.sendText(msg.to,(bctxt))
 				ki3.sendText(msg.to,(bctxt))
@@ -1836,7 +1883,23 @@ def bot(op):
 				ki5.sendText(msg.to,(bctxt))
 				ki6.sendText(msg.to,(bctxt))
 				ki7.sendText(msg.to,(bctxt))
+				ki8.sendText(msg.to,(bctxt))
+				ki9.sendText(msg.to,(bctxt))
+	    elif "Rama: " in msg.text:
+	    	if msg.from_ in admsa:
+				bctxt = msg.text.replace("Rama: ","")
+				ki7.sendText(msg.to,(bctxt))
+            elif "Lyz: " in msg.text:
+	    	if msg.from_ in admsa:
+				bctxt = msg.text.replace("Lyz: ","")
+				cl.sendText(msg.to,(bctxt))
+            elif "Gerry: " in msg.text:
+	    	if msg.from_ in admsa:
+				bctxt = msg.text.replace("Gerry: ","")
+				cl.sendText(msg.to,(bctxt))
+
             elif msg.text.lower() == 'ping':
+	    	cl.sendText(msg.to,(bctxt))
                 ki.sendText(msg.to,"Ping 􀠁􀆩􏿿")
                 ki2.sendText(msg.to,"Ping 􀠁􀆩􏿿")
                 ki3.sendText(msg.to,"Ping 􀠁􀆩􏿿")
@@ -1844,6 +1907,8 @@ def bot(op):
                 ki5.sendText(msg.to,"Ping 􀠁􀆩􏿿")
                 ki6.sendText(msg.to,"Ping 􀠁􀆩􏿿")
                 ki7.sendText(msg.to,"Ping 􀠁􀆩􏿿")
+		ki8.sendText(msg.to,"Ping 􀠁􀆩􏿿")
+		ki9.sendText(msg.to,"Ping 􀠁􀆩􏿿")
             elif "Spam " in msg.text:
                 if msg.from_ in admsa:
                     target = msg.text.replace("Spam ", "")
@@ -1858,7 +1923,7 @@ def bot(op):
                     else:
                         midd = target2[0]
                     jumlah = int(target2[1])
-                    pesan = str(target2[2]) + str(target2[3])
+                    pesan = str(target2[2]) +" "+ str(target2[3])
                     if jumlah <= 100:
                         for var in range(0, jumlah):
                             if (pesan in [" ", " ", " ", " ", "/n", None]):
@@ -1866,19 +1931,13 @@ def bot(op):
                             else:
                                 cl.findAndAddContactsByMid(midd)
                                 cl.sendText(midd, pesan)
-                                ki.sendText(midd, pesan)
-                                ki2.sendText(midd, pesan)
-                                ki3.sendText(midd, pesan)
-                                ki4.sendText(midd, pesan)
-                                ki5.sendText(midd, pesan)
-                                ki6.sendText(midd, pesan)
+                                ki7.sendText(midd, pesan)
+                                ki8.sendText(midd, pesan)
+                                ki9.sendText(midd, pesan)
                                 cl.sendText(msg.to, "Sukses")
                                 print "[notif] Spam chat Mid sukses"
                 else:
                     cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
-            elif msg.text in ["Antibot System"+"/N"+"Jika kamu merasa bukan selfbot"+"/N"+"Ketik: /nobot spasi kode"+"/N"+"Kode kamu adalah"]:
-                pesan = msg.text.replace("Antibot System"+"/N"+"Jika kamu merasa bukan selfbot"+"/N"+"Ketik: /nobot spasi kode"+"/N"+"Kode kamu adalah","")
-                cl.send("/nobot "+pesan)
 # -----------------------------------------------
             elif msg.text in ["Tagall"]:
                     if msg.from_ in admsa:
