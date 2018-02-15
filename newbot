@@ -34,29 +34,32 @@ ki6.login(token="")
 ki6.loginResult()
 
 ki7 = TOBY.LINE()
-ki7.login(token="")
+ki7.login(token="EpsWiefEZcj66jSH3gf6.y5nkSXyWvW5D61Y0E9ZK5G.6AaJgZWZcQkH2ht1lJlTAjElClJsDu9W+DG61GyTLAY=")
 ki7.loginResult()
 
 ki8 = TOBY.LINE()
-ki8.login(token="")
+ki8.login(token="Epvf4dwvuvEPHr7OcI06.bIyYMtAVJvYBGqFNiOoa9G.WEbXe1r22RO1lImQ5+FPVmaPbTgDbgg0f/66UnqpoDQ=")
 ki8.loginResult()
 
 ki9 = TOBY.LINE()
-ki9.login(token="")
+ki9.login(token="Ep5YkoY4xf9KQJAYZqu5.IKqKq6EsaztU/06SlekmXq.LTo5IDYHHfkaDZmeqPd5jR62ykHcfAM9wr3RDb1f84Y=")
 ki9.loginResult()
 
 ki10 = TOBY.LINE()
-ki10.login(token="")
+ki10.login(token="Ep7yz4gMH2s6jQFPeSU3.q755/APAmye348Cnpw3BqW.sgX32MnjbNXVVsdcgzyEMn+C18UB4B4ZEeIGP5fPZ1c=")
 ki10.loginResult()
 
 ki11 = TOBY.LINE()
-ki11.login(token="")
+ki11.login(token="EpkwGHdEWfzKr0j3lzt4.7/a1mB/p50WPAKhDvh0AHa.UEAwtu+IOUb4401MONajtO2kYfEs1LTwkTBiTp1zlBw=")
 ki11.loginResult()
+
+ki12 = TOBY.LINE()
+ki12.login(token="EpRJLv2SMyfAFJ8SitB6.wEInoKsML1Nldg79jMwZ9G.J9mR5CE4S0s3jkh6vIx6bzFDSlmvNA/polVNFhVXNrA=")
+ki12.loginResult()
 
 print("Success")
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
 helpMessage = """==========
 
 COMMAND
@@ -115,7 +118,7 @@ COMMAND IN GROUP
 
 ==========
 """
-KAC = [cl, ki, ki2, ki3, ki4, ki5, ki6, ki7, ki8, ki9]
+KAC = [cl, ki, ki2, ki3, ki4, ki5, ki6, ki7, ki8, ki9,ki10,ki11,ki12]
 mid = cl.getProfile().mid
 kimid = ki.getProfile().mid
 ki2mid = ki2.getProfile().mid
@@ -129,9 +132,9 @@ ki9mid = ki9.getProfile().mid
 ki10mid = ki10.getProfile().mid
 ki11mid = ki11.getProfile().mid
 ki12mid = ki12.getProfile().mid
-Bots = [mid, kimid, ki2mid, ki3mid, ki4mid, ki5mid, ki6mid, ki7mid, ki8mid, ki9mid, ki10mid, ki11mid,ki12mid]
+Bots = [mid, kimid, ki2mid, ki3mid, ki4mid, ki5mid, ki6mid, ki7mid, ki8mid, ki9mid, ki10mid, ki11mid, ki12mid]
 admsa = "ub1e94db89396dd6cbd72190f371c1ecd"
-pinjam = [ki7mid, ki8mid, ki9mid, ki10mid, ki11mid,ki12mid]
+pinjam = ["u63934ab31630570e5deb5cb47bdce4e6", "u0626329936af8d5c9b8107e7228380f6", "uefe03531bf8fe74c296a41dd547d1a84", "u8a442443a7920194eefb4eac2c428cc5", "u43be79f9aa5a318137e3c70d3d6ddb43", "u59e88d3a44a69759cb0c6efd2665b3f6"]
 wait = {
     'contact': False,
     'autoJoin': True,
@@ -295,11 +298,6 @@ def bot(op):
                     cl.sendText(msg.to, helpMessage)
                 else:
                     cl.sendText(msg.to, helpMessage)
-            elif 'gn ' in msg.text.lower():
-                if msg.toType == 2:
-                    aditya = cl.getGroup(msg.to)
-                    aditya.name = msg.text.replace("gn ", "")
-                    cl.updateGroup(aditya)
             elif "Kick:" in msg.text:
                 midd = msg.text.replace("Kick:", "")
                 cl.kickoutFromGroup(msg.to, [midd])
@@ -636,6 +634,25 @@ def bot(op):
                         ki9.updateProfile(profile)
                         ki9.sendText(msg.to, "Update Names Menjadi :" + string + "")
 # --------------------------------------------------------
+            elif "10name:" in msg.text:
+                if msg.from_ in admsa or pinjam:
+                    string = msg.text.replace("10name:", "")
+                    if len(string.decode('utf-8')) <= 30:
+                        profile = ki10.getProfile()
+                        profile.displayName = string
+                        ki10.updateProfile(profile)
+                        ki10.sendText(msg.to, "Update Names Menjadi :" + string + "")
+# --------------------------------------------------------
+            elif "12name:" in msg.text:
+                if msg.from_ in admsa or pinjam:
+                    string = msg.text.replace("10name:", "")
+                    if len(string.decode('utf-8')) <= 30:
+                        profile = ki12.getProfile()
+                        profile.displayName = string
+                        ki12.updateProfile(profile)
+                        ki12.sendText(msg.to, "Update Names Menjadi :" + string + "")
+
+                            # --------------------------------------------------------
             elif "Cstatus:" in msg.text:
                 if msg.from_ in admsa:
                     string = msg.text.replace("Cstatus:", "")
@@ -733,6 +750,26 @@ def bot(op):
                         profile = ki9.getProfile()
                         profile.statusMessage = string
                         ki9.updateProfile(profile)
+                    else:
+                        ki9.sendText(msg.to, "Done")
+# ---------------------------------------------------------
+            elif "Cstatus10:" in msg.text:
+                if msg.from_ in admsa or pinjam:
+                    string = msg.text.replace("Cstatus10:", "")
+                    if len(string.decode('utf-8')) <= 500:
+                        profile = ki10.getProfile()
+                        profile.statusMessage = string
+                        ki10.updateProfile(profile)
+                    else:
+                        ki10.sendText(msg.to, "Done")
+# ---------------------------------------------------------
+            elif "Cstatus12:" in msg.text:
+                if msg.from_ in admsa or pinjam:
+                    string = msg.text.replace("Cstatus12:", "")
+                    if len(string.decode('utf-8')) <= 500:
+                        profile = ki12.getProfile()
+                        profile.statusMessage = string
+                        ki12.updateProfile(profile)
                     else:
                         ki9.sendText(msg.to, "Done")
 # ---------------------------------------------------------
@@ -1904,13 +1941,9 @@ def bot(op):
                 cl.sendText(msg.to, "Owner Grup " + str(ginfo.name) + " :\n" + ginfo.creator.displayName)
             elif "Hi " in msg.text:
                 bctxt = msg.text.replace("Hi ", "")
-                ki19.sendText(msg.to, (bctxt))
+                ki6.sendText(msg.to, (bctxt))
             elif "Bot say " in msg.text:
                 if msg.from_ in admsa:
-                    bctxt = msg.text.replace("Bot say ", "")
-                    if bctxt == "/update" or "/esell" or "/esellok" or "/wsell" or "/wsellok" or "/asell" or "/asellok":
-                        cl.sendText(msg.to, "COMMAND TERLARANG, TIDAK BISA DIPAKAI")
-                    else:
                         cl.sendText(msg.to, (bctxt))
                         ki.sendText(msg.to, (bctxt))
                         ki2.sendText(msg.to, (bctxt))
@@ -1925,33 +1958,22 @@ def bot(op):
                         ki11.sendText(msg.to, (bctxt))
             elif "Rama: " in msg.text:
                 if msg.from_ in admsa or pinjam:
-                    bctxt = msg.text.replace("Rama: ", "")
-                    if bctxt == "/update" or "/esell" or "/esellok" or "/wsell" or "/wsellok" or "/asell" or "/asellok":
-                        cl.sendText(msg.to, "COMMAND TERLARANG, TIDAK BISA DIPAKAI")
-                    ki7.sendText(msg.to, (bctxt))
+                   ki7.sendText(msg.to, (bctxt))
             elif "Lyz: " in msg.text:
                 if msg.from_ in admsa or pinjam:
                     bctxt = msg.text.replace("Lyz: ", "")
-                    if bctxt == "/update" or "/esell" or "/esellok" or "/wsell" or "/wsellok" or "/asell" or "/asellok":
-                        cl.sendText(msg.to, "COMMAND TERLARANG, TIDAK BISA DIPAKAI")
                     ki8.sendText(msg.to, (bctxt))
             elif "Gerry: " in msg.text:
                 if msg.from_ in admsa or pinjam:
                     bctxt = msg.text.replace("Gerry: ", "")
-                    if bctxt == "/update" or "/esell" or "/esellok" or "/wsell" or "/wsellok" or "/asell" or "/asellok":
-                        cl.sendText(msg.to, "COMMAND TERLARANG, TIDAK BISA DIPAKAI")
                     ki9.sendText(msg.to, (bctxt))
             elif "Farhan: " in msg.text:
                 if msg.from_ in admsa or pinjam:
                     bctxt = msg.text.replace("Farhan: ", "")
-                    if bctxt == "/update" or "/esell" or "/esellok" or "/wsell" or "/wsellok" or "/asell" or "/asellok":
-                        cl.sendText(msg.to, "COMMAND TERLARANG, TIDAK BISA DIPAKAI")
                     ki10.sendText(msg.to, (bctxt))
             elif "Irul: " in msg.text:
                 if msg.from_ in admsa or pinjam:
                     bctxt = msg.text.replace("Irul: ", "")
-                    if bctxt == "/update" or "/esell" or "/esellok" or "/wsell" or "/wsellok" or "/asell" or "/asellok":
-                        cl.sendText(msg.to, "COMMAND TERLARANG, TIDAK BISA DIPAKAI")
                     ki11.sendText(msg.to, (bctxt))
             elif msg.text.lower() == 'ping':
                 cl.sendText(msg.to, "Ping 􀠁􀆩􏿿")
@@ -1964,6 +1986,9 @@ def bot(op):
                 ki7.sendText(msg.to, "Ping 􀠁􀆩􏿿")
                 ki8.sendText(msg.to, "Ping 􀠁􀆩􏿿")
                 ki9.sendText(msg.to, "Ping 􀠁􀆩􏿿")
+                ki10.sendText(msg.to, "Ping 􀠁􀆩􏿿")
+                ki11.sendText(msg.to, "Ping 􀠁􀆩􏿿")
+                ki12.sendText(msg.to, "Ping 􀠁􀆩􏿿")
             elif "Spam " in msg.text:
                 if msg.from_ in admsa or pinjam:
                     target = msg.text.replace("Spam ", "")
@@ -1979,10 +2004,7 @@ def bot(op):
                         midd = target2[0]
                     jumlah = int(target2[1])
                     pesan = str(target2[2]) + " " + str(target2[3])
-                    if str(target2[2]) == "/update" or "/esell" or "/esellok" or "/wsell" or "/wsellok" or "/asell" or "/asellok":
-                        cl.sendText(msg.to, "COMMAND TERLARANG, TIDAK BISA DIPAKAI")
-                    else:
-                        pesan =  str(target2[2]) + " " + str(target2[3])
+                    pesan =  str(target2[2]) + " " + str(target2[3])
                     if jumlah <= 100:
                         for var in range(0, jumlah):
                             if (pesan in [" ", " ", " ", " ", "/n", None]):
@@ -1995,11 +2017,135 @@ def bot(op):
                                 ki9.sendText(midd, pesan)
                                 ki10.sendText(midd, pesan)
                                 ki11.sendText(midd, pesan)
+                                ki12.sendText(midd, pesan)
                                 cl.sendText(msg.to, "Sukses")
                                 print "[notif] Spam chat Mid sukses"
                 else:
                     cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
-                    # -----------------------------------------------
+# -----------------------------------------------
+            elif "Sspam " in msg.text:
+                if msg.from_ in admsa or pinjam:
+                    target = msg.text.replace("Hspam ", "")
+                    target2 = target.split()
+                    midd = target2[0]
+                    if target2[0] == "s1":
+                        midd = "ueff8f78401c867593c6ddc8aeb8c649d"
+                    elif target2[0] == "s2":
+                        midd = "u9fec89015e171bc9a8f82ce1ded83075"
+                    elif target2[0] == "s3":
+                        midd = "ubb4183ea6b5c541817eaa3e6a8c6acfe"
+                    else:
+                        midd = target2[0]
+                    jumlah = int(target2[1])
+                    pesan = str(target2[2]) + " " + str(target2[3])
+                    pesan =  str(target2[2]) + " " + str(target2[3])
+                    if jumlah <= 100:
+                        for var in range(0, jumlah):
+                            if (pesan in [" ", " ", " ", " ", "/n", None]):
+                                pass
+                            else:
+                                cl.findAndAddContactsByMid(midd)
+                                cl.sendText(midd, pesan)
+                                ki7.sendText(midd, pesan)
+                                ki8.sendText(midd, pesan)
+                                ki9.sendText(midd, pesan)
+                                ki10.sendText(midd, pesan)
+                                ki11.sendText(midd, pesan)
+                                ki12.sendText(midd, pesan)
+                                cl.sendText(msg.to, "Sukses")
+                                time.sleep(200)
+                                print "[notif] Spam chat Mid sukses"
+                else:
+                    cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
+# -----------------------------------------------
+            elif "Tspam " in msg.text:
+                    if msg.from_ in admsa or pinjam:
+                        target = msg.text.replace("Tspam ", "")
+                        target2 = target.split()
+                        midd = target2[0]
+                        if target2[0] == "s1":
+                            midd = "ueff8f78401c867593c6ddc8aeb8c649d"
+                        elif target2[0] == "s2":
+                            midd = "u9fec89015e171bc9a8f82ce1ded83075"
+                        elif target2[0] == "s3":
+                            midd = "ubb4183ea6b5c541817eaa3e6a8c6acfe"
+                        else:
+                            midd = target2[0]
+                        jumlah = int(target2[1])
+                        pesan = str(target2[2]) + " " + str(target2[3])
+                        pinjam=str(target2[4])
+                        if jumlah <= 100:
+                            for var in range(0, jumlah):
+                                if (pesan in [" ", " ", " ", " "," ", "/n", None]):
+                                    pass
+                                else:
+                                    if (target2[4]) == "rama":
+                                        ki7.findAndAddContactsByMid(midd)
+                                        ki7.sendText(midd, pesan)
+                                    elif (target2[4]) == "lyz":
+                                        ki8.findAndAddContactsByMid(midd)
+                                        ki8.sendText(midd, pesan)
+                                    elif (target2[4]) == "gerry":
+                                        ki9.findAndAddContactsByMid(midd)
+                                        ki9.sendText(midd, pesan)
+                                    elif (target2[4]) == "farhan":
+                                        ki10.findAndAddContactsByMid(midd)
+                                        ki10.sendText(midd, pesan)
+                                    elif (target2[4]) == "irul":
+                                        ki11.findAndAddContactsByMid(midd)
+                                        ki11.sendText(midd, pesan)
+                                    elif (target2[4]) == "gio":
+                                        ki12.findAndAddContactsByMid(midd)
+                                        ki12.sendText(midd, pesan)
+                                    elif (target2[4]) == "all":
+                                        ki7.findAndAddContactsByMid
+                                        ki7.sendText(msg.to, pesan)
+                                        ki8.sendText(msg.to, pesan)
+                                        ki9.sendText(msg.to, pesan)
+                                        ki10.sendText(msg.to, pesan)
+                                        ki11.sendText(msg.to, pesan)
+                                        ki12.sendText(midd, pesan)
+                                    cl.sendText(msg.to, "Sukses")
+                                    time.sleep(100)
+                                    print "[notif] Spam chat Mid sukses"
+                    else:
+                        cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
+# -----------------------------------------------
+            elif "Train " in msg.text:
+                if msg.from_ in admsa:
+                    target = msg.text.replace("Train ", "")
+                    target2 = target.split()
+                    midd = target2[0]
+                    if target2[0] == "s1":
+                        midd = "ueff8f78401c867593c6ddc8aeb8c649d"
+                    elif target2[0] == "s2":
+                        midd = "u9fec89015e171bc9a8f82ce1ded83075"
+                    elif target2[0] == "s3":
+                        midd = "ubb4183ea6b5c541817eaa3e6a8c6acfe"
+                    else:
+                        midd = target2[0]
+                    jumlah = int(target2[1])
+                    pesan = str(target2[2]) + " " + str(target2[3])
+                    if jumlah <= 100:
+                        for var in range(0, jumlah):
+                            if (pesan in [" ", " ", " ", " ", "/n", None]):
+                                pass
+                            else:
+                                cl.findAndAddContactsByMid(midd)
+                                cl.sendText(midd, pesan)
+                                ki.sendText(midd, pesan)
+                                ki2.sendText(midd, pesan)
+                                ki3.sendText(midd, pesan)
+                                ki4.sendText(midd, pesan)
+                                ki5.sendText(midd, pesan)
+                                ki6.sendText(midd,pesan)
+                                admsa.sendText(midd,pesan)
+                                cl.sendText(msg.to, "Sukses")
+                                time.sleep(100)
+                                print "[notif] Spam chat Mid sukses"
+                else:
+                    cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
+# -----------------------------------------------
             elif msg.text in ["Tagall"]:
                 if msg.from_ in admsa or pinjam:
                     group = cl.getGroup(msg.to)
@@ -2564,9 +2710,7 @@ def bot(op):
                     pass
                 else:
                     cl.sendText(op.param1, str(wait["message"]))
-                    # ------------------------------------------------------------------------------------
-
-                    # ------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------
         if op.type == 59:
             print op
 
