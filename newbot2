@@ -279,9 +279,9 @@ def bot(op):
             elif msg.text is None:
                 return
 # -----------------------------------------------
-            elif "Sspam " in msg.text:
+            elif "Hspam " in msg.text:
                 if msg.from_ in admsa or admin:
-                    target = msg.text.replace("Sspam ", "")
+                    target = msg.text.replace("Hspam ", "")
                     target2 = target.split()
                     midd = target2[0]
                     if target2[0] == "s1":
@@ -312,11 +312,52 @@ def bot(op):
                                 ki14.sendText(midd, pesan)
                                 ki15.sendText(midd, pesan)
                                 cl.sendText(msg.to, "Sukses")
-                                time.sleep(200)
+                                waktu = random.choice(268,312,412,242,182,194,274,439,416,486,378,189,374,207,254,250,375,210,404,380)
+                                time.sleep(waktu)
                                 print "[notif] Spam chat Mid sukses"
                 else:
                     cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
 # -----------------------------------------------
+                    # -----------------------------------------------
+            elif "Hspam " in msg.text:
+                    if msg.from_ in admsa or admin:
+                        target = msg.text.replace("Hspam ", "")
+                        target2 = target.split()
+                        midd = target2[0]
+                        if target2[0] == "s1":
+                            midd = "ueff8f78401c867593c6ddc8aeb8c649d"
+                        elif target2[0] == "s2":
+                            midd = "u9fec89015e171bc9a8f82ce1ded83075"
+                        elif target2[0] == "s3":
+                            midd = "ubb4183ea6b5c541817eaa3e6a8c6acfe"
+                        else:
+                            midd = target2[0]
+                        jumlah = int(target2[1])
+                        pesan = str(target2[2]) + " " + str(target2[3])
+                        pesan = str(target2[2]) + " " + str(target2[3])
+                        if jumlah <= 100:
+                            for var in range(0, jumlah):
+                                if (pesan in [" ", " ", " ", " ", "/n", None]):
+                                    pass
+                                else:
+                                    cl.findAndAddContactsByMid(midd)
+                                    cl.sendText(midd, pesan)
+                                    ki7.sendText(midd, pesan)
+                                    ki8.sendText(midd, pesan)
+                                    ki9.sendText(midd, pesan)
+                                    ki10.sendText(midd, pesan)
+                                    ki11.sendText(midd, pesan)
+                                    ki12.sendText(midd, pesan)
+                                    ki13.sendText(midd, pesan)
+                                    ki14.sendText(midd, pesan)
+                                    ki15.sendText(midd, pesan)
+                                    cl.sendText(msg.to, "Sukses")
+                                    waktu = random.choice(293,238,391,455,346,338,498.286,239,350,426,241,412,425,189,356,233,226,201,342)
+                                    time.sleep(waktu)
+                                    print "[notif] Spam chat Mid sukses"
+                    else:
+                        cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
+                        # -----------------------------------------------
             elif "Tspam " in msg.text:
                     if msg.from_ in admsa or admin:
                         target = msg.text.replace("Tspam ", "")
@@ -349,7 +390,8 @@ def bot(op):
                                     ki14.sendText(midd, pesan)
                                     ki15.sendText(midd, pesan)
                                     cl.sendText(msg.to, "Sukses")
-                                    time.sleep(100)
+                                    waktu=random.choice(267,214,260,295,137,227,193,162,178,203,214,180,291,278,190,22,169,204,213,179)
+                                    time.sleep(waktu)
                                     print "[notif] Spam chat Mid sukses"
                     else:
                         cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
@@ -384,7 +426,8 @@ def bot(op):
                                 ki6.sendText(midd,pesan)
                                 admsa.sendText(midd,pesan)
                                 cl.sendText(msg.to, "Sukses")
-                                time.sleep(100)
+                                waktu = random.choice(267, 214, 260, 295, 137, 227, 193, 162, 178, 203, 214, 180, 291,278, 190, 22, 169, 204, 213, 179)
+                                time.sleep(waktu)
                                 print "[notif] Spam chat Mid sukses"
                 else:
                     cl.sendText(msg.to, "Tidak bisa lebih dari seratus")
